@@ -19,6 +19,7 @@ public class mainPage extends javax.swing.JFrame {
      */
     public mainPage() {
         initComponents();
+        texto.setEditable(false);
         
     }
 
@@ -35,7 +36,7 @@ public class mainPage extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        texto = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,10 +67,10 @@ public class mainPage extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 120, -1));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        texto.setEditable(false);
+        texto.setColumns(20);
+        texto.setRows(5);
+        jScrollPane1.setViewportView(texto);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 280, 150));
 
@@ -86,32 +87,185 @@ public class mainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int u,d,t;
+int u,d,t,s,c;
           
         u = JOptionPane.showConfirmDialog(rootPane,"¿Usted presenta orina constante?", null, YES_NO_OPTION);
                 
         if(u == 0){
-            //diabetes();
+            diabetes();
         }
         else if(u == 1){
           d = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta ardor en el estomago?", null, YES_NO_OPTION);  
             if(d == 0){
-              //  gastritis();
+              gastritis();
             }
             else if(d==1){
                 t = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta hinchazon en extremidades?", null, YES_NO_OPTION);
                     if(t == 0){
-                        //colesterol();
+                        colesterol();
                     }
                     else if(t == 1){
-                        JOptionPane.showMessageDialog(rootPane, "Usted no presenta ninguna de las 3 enfermedades", null, YES_NO_OPTION);
+                        c = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta Hemorragia o secreción no acostumbradas", null, YES_NO_OPTION);  
+                        if(c == 0){
+                            cancer();
+                                    }
+                        else if(c == 1){
+                            s = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta Infecciones por levaduras graves ", null, YES_NO_OPTION);  
+                                if(s == 0){
+                                    Sida();
+                                    } 
+                   else if(s == 1){
+                        JOptionPane.showMessageDialog(rootPane, "Usted no presenta ninguna de las 5 enfermedades", null, YES_NO_OPTION);
                     }
             }
         }    
         
-        
+          }
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+   
+    
+    public void cancer(){
+        int u,d,t,c,q,e,a,b;
+        
+        u = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Ronquera o tos que no se quita",null,YES_NO_OPTION);
+        d = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Cambios en los hábitos del intestino",null,YES_NO_OPTION);
+        t = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Dificultad o dolor al orinar",null,YES_NO_OPTION);
+        c = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Problemas para comer",null,YES_NO_OPTION);
+        q = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Aumento de peso o adelgazamiento sin razón conocida",null,YES_NO_OPTION);
+        e = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Dolor abdominal",null,YES_NO_OPTION);
+        a = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Debilidad o mucho cansancio",null,YES_NO_OPTION);
+        b = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Un lunar nuevo o un cambio en un lunar existente",null,YES_NO_OPTION);
+        
+        if((u==0) && (d==0) && (t==0) && (c==0) && (q==0) && (e==0) && (a==0) && (b==0)){
+            String dg = "----------------------------------------------------\n"
+                     + "-  Sistema Experto de diagnostico                   \n"
+                     + "-    ingenieria de sistemas                         \n"
+                     + "----------------------------------------------------\n"
+                     + "-         DIAGNOSTICO                               \n"
+                     + "----------------------------------------------------\n"
+                     + "- lo que usted presenta es CANCER                   \n"
+                     + "----------------------------------------------------";
+           
+           texto.setText(dg);
+        }else{
+           Sida();
+        }
+    
+    }
+    
+    private void diabetes(){
+      int u,d,t,c,ci,se;
+      
+      u = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta sed constante?", null, YES_NO_OPTION);
+      d = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta hambre excesiva?", null, YES_NO_OPTION);
+      t = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta perdida de peso inesplicable?", null, YES_NO_OPTION);
+      c = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta aumento de fatiga y debilidad?", null, YES_NO_OPTION);
+      ci = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta irritación?", null, YES_NO_OPTION);
+      se = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta visión borrosa?", null, YES_NO_OPTION);
+      
+      if((u==0) && (d==0) && (t==0) && (c==0) && (ci==0) && (se==0)){
+           String dg = "----------------------------------------------------\n"
+                     + "-  Sistema Experto de diagnostico                   \n"
+                     + "-    ingenieria de sistemas                         \n"
+                     + "----------------------------------------------------\n"
+                     + "-         DIAGNOSTICO                               \n"
+                     + "----------------------------------------------------\n"
+                     + "- lo que usted presenta es DIABETES                 \n"
+                     + "----------------------------------------------------";
+           
+           texto.setText(dg);
+      }
+      else{
+          gastritis();
+      }
+    }
+    
+    public void Sida(){
+      int q,w,e,r,t,y,u;
+      
+      q = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Dolor de garganta",null,YES_NO_OPTION);
+      w = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Infecciones graves recurrentes",null,YES_NO_OPTION);
+      r = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Cansancio persistente, mareos y aturdimiento",null,YES_NO_OPTION);
+      e = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Dolores de cabeza",null,YES_NO_OPTION);
+      t = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Pérdida brusca de peso",null,YES_NO_OPTION);
+      y = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Inflamación o rigidez de las glándulas de la garganta, las axilas o la ingle",null,YES_NO_OPTION);
+      u = JOptionPane.showConfirmDialog(rootPane,"Usted Presenta Accesos de tos seca profunda",null,YES_NO_OPTION);
+      
+      if((q==0) && (w==0) && (r==0) && (e==0) && (t==0) && (y==0) && (u==0)){
+            String dg = "----------------------------------------------------\n"
+                     + "-  Sistema Experto de diagnostico                   \n"
+                     + "-    ingenieria de sistemas                         \n"
+                     + "----------------------------------------------------\n"
+                     + "-         DIAGNOSTICO                               \n"
+                     + "----------------------------------------------------\n"
+                     + "- lo que usted presenta es SIDA                     \n"
+                     + "----------------------------------------------------";
+           
+           texto.setText(dg);
+      
+      }else{
+         Sida();
+      }
+      
+      
+    }
+    
+    private void gastritis(){
+      int u,d,t,c,ci,se,si,oc ;  
+      
+      u = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta perdida de peso?", null, YES_NO_OPTION);
+      d = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta nauseas?", null, YES_NO_OPTION);
+      t = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta hipo?", null, YES_NO_OPTION);
+      c = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta eructos?", null, YES_NO_OPTION);
+      ci = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta gases?", null, YES_NO_OPTION);
+      se = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta mal sabor de boca?", null, YES_NO_OPTION); 
+      si = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta vomitos?", null, YES_NO_OPTION);
+      oc = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta sensacion de vacio gastrico?", null, YES_NO_OPTION);
+      
+      if((u==0) && (d==0) && (t==0) && (c==0) && (ci==0) && (se==0) && (si==0) && (oc==0)){
+           String dg = "----------------------------------------------------\n"
+                     + "-  Sistema Experto de diagnostico                   \n"
+                     + "-    ingenieria de sistemas                         \n"
+                     + "----------------------------------------------------\n"
+                     + "-         DIAGNOSTICO                               \n"
+                     + "----------------------------------------------------\n"
+                     + "- lo que usted presenta es GASTRITIS                \n"
+                     + "----------------------------------------------------";
+           
+          texto.setText(dg);
+      }
+      else{
+          colesterol();
+      }
+    }
+    
+    private void colesterol(){
+       int u,d,t,c,ci,se;
+       
+       u = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta perdida de equilibrio o mareo?", null, YES_NO_OPTION);
+       d = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta dolor de cabeza?", null, YES_NO_OPTION);
+       t = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta ojos amarillos?", null, YES_NO_OPTION);
+       c = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta visión borrosa?", null, YES_NO_OPTION);
+       ci = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta agitacion al presentar actividades leves?", null, YES_NO_OPTION); 
+       se = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta dolor en el pecho?", null, YES_NO_OPTION);
+       
+       if((u==0) && (d==0) && (t==0) && (c==0) && (ci==0) && (se==0)){
+            String dg = "----------------------------------------------------\n"
+                     + "-  Sistema Experto de diagnostico                    \n"
+                     + "-    ingenieria de sistemas                          \n"
+                     + "-----------------------------------------------------\n"
+                     + "-         DIAGNOSTICO                                \n"
+                     + "-----------------------------------------------------\n"
+                     + "- lo que usted presenta es COLESTEROL                \n"
+                     + "-----------------------------------------------------";
+           texto.setText(dg); 
+       }
+       else{
+           diabetes();
+       }
+    }
+  
     /**
      * @param args the command line arguments
      */
@@ -158,6 +312,6 @@ int u,d,t;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea texto;
     // End of variables declaration//GEN-END:variables
 }
