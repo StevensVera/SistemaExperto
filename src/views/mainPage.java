@@ -72,6 +72,8 @@ public class mainPage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 280, 150));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/medica.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
