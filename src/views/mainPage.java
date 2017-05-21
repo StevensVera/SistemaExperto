@@ -5,6 +5,9 @@
  */
 package views;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
+
 /**
  *
  * @author VictorManuel
@@ -16,6 +19,7 @@ public class mainPage extends javax.swing.JFrame {
      */
     public mainPage() {
         initComponents();
+        
     }
 
     /**
@@ -45,6 +49,11 @@ public class mainPage extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Snell Roundhand", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 153, 153));
         jButton1.setText("Comenzar Examen");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Snell Roundhand", 1, 18)); // NOI18N
@@ -63,8 +72,6 @@ public class mainPage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 280, 150));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/GiannyEduardo/Desktop/SistemaExperto/src/img/medica.jpg")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -75,6 +82,33 @@ public class mainPage extends javax.swing.JFrame {
 
      System.exit(0);
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+int u,d,t;
+          
+        u = JOptionPane.showConfirmDialog(rootPane,"¿Usted presenta orina constante?", null, YES_NO_OPTION);
+                
+        if(u == 0){
+            //diabetes();
+        }
+        else if(u == 1){
+          d = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta ardor en el estomago?", null, YES_NO_OPTION);  
+            if(d == 0){
+              //  gastritis();
+            }
+            else if(d==1){
+                t = JOptionPane.showConfirmDialog(rootPane, "¿Usted presenta hinchazon en extremidades?", null, YES_NO_OPTION);
+                    if(t == 0){
+                        //colesterol();
+                    }
+                    else if(t == 1){
+                        JOptionPane.showMessageDialog(rootPane, "Usted no presenta ninguna de las 3 enfermedades", null, YES_NO_OPTION);
+                    }
+            }
+        }    
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
